@@ -4,6 +4,10 @@ pipeline {
             label 'docker_agent_alpine'
             }
       }
+
+    tools {
+        maven 'Maven 3.8.6'
+    }  
     triggers {
         pollSCM '*/5 * * * *'
     }  
