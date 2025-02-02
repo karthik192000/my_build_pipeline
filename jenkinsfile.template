@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "Building Now.."
                 sh '''
-                echo "doing build stuff.."
+                javac Main.java
                 '''
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                echo "doing test stuff.."
+                java Main
                 '''
             }
         }
