@@ -3,11 +3,7 @@ pipeline {
         node {
             label 'docker_agent_alpine'
             }
-      }
-
-    tools {
-        maven 'maven'
-    }  
+      }      
     triggers {
         pollSCM '*/5 * * * *'
     }  
