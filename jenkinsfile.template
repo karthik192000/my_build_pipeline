@@ -12,9 +12,9 @@ pipeline {
             steps {
                 echo "Building Now.."
                 sh '''
-                git clone https://github.com/karthik192000/Test.git
-                cd Test
-                javac Main.java
+                git clone https://github.com/karthik192000/SpringBootApp.git
+                cd SpringBootApp
+                mvn clean install
                 '''
             }
         }
@@ -22,9 +22,16 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                ls -al
-                cd Test
-                java Main
+                cd SpringBootApp
+                java -jar SpringBootApp-1.0.0-SNAPSHOT
+                '''
+            }
+        }
+        stage('Ping'){
+            steps{
+                echo "Ping Test"
+                sh '''
+                 ping http://localhost:8080
                 '''
             }
         }
