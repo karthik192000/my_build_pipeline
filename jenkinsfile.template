@@ -20,7 +20,7 @@ pipeline {
                 echo "Building Now.."
                 sh '''
                 git clone https://github.com/karthik192000/SpringBootApp.git
-                cd SpringBootApp/target
+                cd SpringBootApp
                 mvn clean install
                 '''
             }
@@ -29,8 +29,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                cd SpringBootApp
-                ls -al
+                cd /home/jenkins/.m2/repository/SpringBootApp/SpringBootApp/1.0.0-SNAPSHOT
                 java -jar SpringBootApp-1.0.0-SNAPSHOT
                 '''
             }
