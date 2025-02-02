@@ -5,7 +5,7 @@ pipeline {
             }
       }
     tools {
-        maven 'M3'
+        maven '3.9.9'
     }        
     triggers {
         pollSCM '*/5 * * * *'
@@ -16,7 +16,8 @@ pipeline {
                 echo "Building Now.."
                 sh '''
                 git clone https://github.com/karthik192000/SpringBootApp.git
-                ls -al
+                cd SpringBootApp
+                mvn clean install
                 '''
             }
         }
@@ -24,8 +25,8 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                cd /usr/local
-                ls -al
+                cd SpringBootApp
+                java -jar SpringBootApp-1.0.0-SNAPSHOT
                 '''
             }
         }
