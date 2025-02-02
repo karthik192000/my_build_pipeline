@@ -23,6 +23,7 @@ pipeline {
                 echo "Testing.."
                 sh '''
                 ls -al
+                cd Test
                 java Main
                 '''
             }
