@@ -20,7 +20,7 @@ pipeline {
                 echo "Building Now.."
                 sh '''
                 git clone https://github.com/karthik192000/SpringBootApp.git
-                cd SpringBootApp
+                cd SpringBootApp/target
                 mvn clean install
                 '''
             }
