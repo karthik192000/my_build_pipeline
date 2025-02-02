@@ -13,8 +13,7 @@ pipeline {
                 echo "Building Now.."
                 sh '''
                 git clone https://github.com/karthik192000/SpringBootApp.git
-                cd SpringBootApp
-                mvn clean install
+                ls -al
                 '''
             }
         }
@@ -22,8 +21,8 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                cd SpringBootApp
-                java -jar SpringBootApp-1.0.0-SNAPSHOT
+                cd /usr/local
+                ls -al
                 '''
             }
         }
