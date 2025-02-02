@@ -1,2 +1,4 @@
-FROM jenkins/agent:latest-alpine-jdk17
-CMD [ "apt-get install maven" ]
+FROM jenkins/agent:latest-jdk17
+USER root
+RUN apt-get update && apt-get install -y maven
+USER jenkins
